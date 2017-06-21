@@ -44,7 +44,7 @@ export const config = {
 };
 ```
 
-To review step by tesp tutorial on how to set it up go [here] (https://medium.com/dailyjs/authenticating-a-vue-js-application-with-firebase-ui-8870a3a5cff8).
+To review step by tesp tutorial on how to set it up go [here](https://medium.com/dailyjs/authenticating-a-vue-js-application-with-firebase-ui-8870a3a5cff8).
 
 ## Build Setup
 
