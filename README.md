@@ -28,3 +28,35 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## Firebase Setup
+
+Add firebaseConfig.js file to helpers folder. The file shold look like:
+
+```
+export const config = {
+  apiKey: "API_KEY",
+  authDomain: "project-name.firebaseapp.com",
+  databaseURL: "https://project-name.firebaseio.com",
+  projectId: "project-name",
+  storageBucket: "project-name.appspot.com",
+  messagingSenderId: "ID_NUMBER"
+};
+```
+
+To review step by tesp tutorial on how to set it up go [here] (https://medium.com/dailyjs/authenticating-a-vue-js-application-with-firebase-ui-8870a3a5cff8).
+
+## Build Setup
+
+Added Dependencies:
+
+``` bash
+# vuex
+npm install vuex --save
+
+# bootstrap vue
+npm install --save bootstrap-vue
+
+# firebase
+npm install --save firebase firebaseui
+```
