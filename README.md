@@ -59,4 +59,24 @@ npm install --save bootstrap-vue
 
 # firebase
 npm install --save firebase firebaseui
+
+# firebase host
+npm install -g firebase-tools
+```
+
+## Firebase Hosting
+
+Set Up:
+``` bash
+firebase login
+firebase init
+```
+
+Deploy:
+``` bash
+# build
+npm run build
+
+#deploy
+firebase deploy
 ```
