@@ -3,7 +3,6 @@
     <nav class="fixed-top">
       <navigation-bar></navigation-bar>
     </nav>
-    <img src="./assets/logo.png">
     <router-view></router-view>
   </div>
 </template>
