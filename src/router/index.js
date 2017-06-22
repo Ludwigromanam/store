@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Hello from '@/components/Hello'
-import Auth from '@/components/Auth'
-import AuthSuccess from '@/components/AuthSuccess'
+import Home from '@/components/Home'
+import Profile from '@/components/Profile/Profile'
+import Stores from '@/components/Stores/Stores'
 
 Vue.use(Router)
 
@@ -11,18 +11,22 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'Home',
+      component: Home
     },
     {
-      path: '/auth',
-      name: 'Auth',
-      component: Auth
+      path: '/profile',
+      name: 'Profile',
+      component: Profile
     },
     {
-      path: '/sucess',
-      name: 'AuthSuccess',
-      component: AuthSuccess
+      path: '/stores',
+      name: 'Stores',
+      component: Stores
+    },
+    {
+      path: '*',
+      redirect: '/'
     }
   ]
 })

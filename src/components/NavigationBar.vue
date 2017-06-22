@@ -7,35 +7,45 @@
       <span>Store</span>
     </b-link>
 
-    <b-collapse is-nav id="nav_collapse">
-      
-      <b-nav is-nav-bar>
-        <b-nav-item>Support</b-nav-item>
-        <b-nav-item>Docs</b-nav-item>
-        <b-nav-item>Contact Us</b-nav-item>
-      </b-nav>
-      
-      <b-nav is-nav-bar class="ml-auto">
+    <template v-if="user.loggedIn">
+      <b-collapse is-nav id="nav_collapse">
         
-      <b-nav-item-dropdown right>
+        <b-nav is-nav-bar>
+          <b-nav-item to="/stores">Stores</b-nav-item>
+        </b-nav>
+        
+        <b-nav is-nav-bar class="ml-auto">
           
-          <!-- Using text slot -->
-          <template slot="text">
-          <span style="font-weight: bold;">User</span>
-          </template>
-          
-          <b-dropdown-item to="#">Profile</b-dropdown-item>
-          <b-dropdown-item to="#">Signout</b-dropdown-item>
-      </b-nav-item-dropdown>
-       
-      </b-nav>
-    </b-collapse>
+          <b-nav-item-dropdown right>
+              
+            <!-- Using text slot -->
+            <template slot="text">
+              <img alt="currentUserName" 
+              class="avatar" 
+              :src="user.profilePicUrl" 
+              height="20" width="20" data-pin-nopin="true">
+            </template>
+            
+            <b-dropdown-item to="/profile">Profile</b-dropdown-item>
+            <b-dropdown-item @click="signOut">Signout</b-dropdown-item>
+          </b-nav-item-dropdown>
+        
+        </b-nav>
+      </b-collapse>
+    </template>
   </b-navbar>
 </template>
 
 <script>
+  import { mapGetters, mapActions } from 'vuex'
   export default {
-    name: 'NavigationBar'
+    name: 'NavigationBar',
+    computed: {
+      ...mapGetters(['user', 'currentUserName'])
+    },
+    methods: {
+      ...mapActions(['signIn', 'signOut'])
+    }
   }
 </script>
 
