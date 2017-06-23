@@ -80,3 +80,7 @@ npm run build
 #deploy
 firebase deploy
 ```
+
+## Notes
+
+Dependency "chromedriver": "^2.27.2" makes travis fail -> how should we fix that?

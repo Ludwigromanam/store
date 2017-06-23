@@ -1,0 +1,54 @@
+# Most the the explicit lines here are the default behaviour, but for learning purposes we are adding them
+# They will be marked as # EC
+dist: trusty
+addons:
+  chrome: stable
+
+language: node_js
+node_js:
+  - "7"
+
+cache: yarn
+
+before_install:
+  - export CHROME_BIN=/usr/bin/google-chrome
+  - export DISPLAY=:99.0 
+  - sh -e /etc/init.d/xvfb start
+  - sudo apt-get update
+  - sudo apt-get install -y libappindicator1 fonts-liberation
+  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  - sudo dpkg -i google-chrome*.deb
+
+# install:
+#   - npm install # EC
+
+before_script:
+  - echo 'before_script'
+
+script:
+  - npm run unit
+
+after_script:
+  - echo 'after_script'
+
+after_success:
+  - echo 'after_success'
+
+after_failure:
+  - echo 'after_failure'
+
+
+before_deploy:
+  - echo 'before_deploy'
+
+deploy:
+  provider: firebase
+  token:
+    secure: "Csj0rxVwnIqi8xN67f37DG+oTAcfycgmla8eca29rPNXrUpYwhdyeWnsTMRNIUIhqioMPDHTr6lclqv3tflV+muJ3tuwgyYHY5q1TugmAH69uGvvxCGIUBOlfO/Q2pj6KAugYuAH0+m+JRsdu/WwjYOuIH0IxiBz0dc6CalfEmfGagnGQL7GdgKrXD+V5iPIpCbCwqNtM8iWZUxrtdbPQ07E3LLiwfZR2NRM9et3JV55pywsVXkAidNlaNE1qcJ0HNxglCRlnqJBJg4Rl9FcJR/t167e0c0KY2CDjsmuIkllvy0YgpaeCFWCduISx+g7P1849r4iabjEA0CdozGT9bic483wPb9jm5Pt0UZc3NTQg6ixKFEPpk5EPvQWupb7QTep36caeofhkWsENts4B1zHxOzxOV+AgvX/pyvYX+/z9ObEFZQwTgiLudY8FVwbseg9S0/Wh4g/Sg9WbSXlfymfTLb9UoQWIYsT1kryyHAiKkSZyld0zMBNfgkVTOqd+stzYufYH9dVyizdH840n4nZ59+LV8dfeoRoX0c0KcBuc18LmMDHfc0lTsKITDxISJvp/xUNJQ6dO2hAYK7Yb80MMyfZKKHohf+K/2JWnZf6kiZwrv9vTbrpCf5VWDp5Z4apI+rkMNolwpiXMRv7bhGu7REZsNy+zcUMa8US6xo="
+  project: "store-4e0fc"
+  skip_cleanup: true
+  on:
+    branch: release
+
+after_deploy:
+  - echo 'after_deploy'

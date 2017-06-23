@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <h1>Welcome!</h1>
     <template v-if="!user.loggedIn">
       <div id="firebaseui-auth-container"></div>
     </template>
