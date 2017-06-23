@@ -81,6 +81,8 @@ npm run build
 firebase deploy
 ```
 
-## Notes
+## To Do
 
-Dependency "chromedriver": "^2.27.2" makes travis fail -> how should we fix that?
+1. Dependency "chromedriver": "^2.27.2" makes travis fail -> how should we fix that?
+2. Create staging environment alpha-beta-release
+3. Set up diff firebase projects per each

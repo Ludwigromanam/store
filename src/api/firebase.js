@@ -1,6 +1,9 @@
 import firebase from 'firebase'
 import {config} from '@/helpers/firebaseConfig'
 
+// Since authentication is core to our app it will be included to this file
+// It could eventually be moved to a secondary api file.
+
 // initialize Firebase
 firebase.initializeApp(config)
 var auth = firebase.auth()
