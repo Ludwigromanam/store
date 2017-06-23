@@ -37,15 +37,13 @@ after_success:
 after_failure:
   - echo 'after_failure'
 
-
 before_deploy:
-  - echo 'before_deploy'
+  - npm run build
 
 deploy:
   provider: firebase
   token:
     secure: "gzh3CnYJOXj4u1nLlF4UMtDnIPYeQ6bBLr5PkTB0FLs9OXWx63QfLQWEZWatPfNsnCDuA1XPkihmCXASR4wjUF9ZGcNw8DSvPVSXxltCGXuglK1fifQZ0BN7RnpX2+1meUm4+euYKifaDk+pHh7v0TYLP3VT0baw+sMnUvw1FDMikgBZLCtRR3I3VK2P3eYsyu4pU5miz8R/+jyFk4Ww8rr/oPK4j9f/UrHFHwZtQBDHrlWtCkgRS2V15DSFAn3Bd7OBPXKRSXAnDy8APrQkwNa2AhnPeIlgk+jZ+6XAN7q/t4o63osaghjCAXBraKrm5/XYS4jRwewTHRkbwlU6uoAvYR53n7W06vSxFQwNaS8gasjDX1vTYH4c+Bl8JkhY4viHHAV0OSkJdnAdoA75dOIO0ePaBw/ow/9IYJCTwVELxv7M+VB/EGjv54xbC5HmEza61OSLdhTQXTrDbzpELvTyH2b/zcQaSYHB184LFHrhQwyLWzfzKqYn5PD96uJUokNvy5OqIeKIzPE+M0vDnru40t0y9246lnf+eAAWIoOR4vD3FPqCOTzl7t+K1bfmqCKnhusan7BNb9bgfEanmCWNoYYoRsEz+rxvxrtTBmXHNXJrW4mEy7rkOX/8IG1nidJBvnwyKvf82cHv+bMtYqPzWk2JdfuPXE48/rfmO+M="
-  project: "store"
   skip_cleanup: true
   on:
     branch: release

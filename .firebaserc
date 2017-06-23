@@ -1,1 +1,5 @@
-{}
+{
+  "projects": {
+    "default": "store-4e0fc"
+  }
+}
